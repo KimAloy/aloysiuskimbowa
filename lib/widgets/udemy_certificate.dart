@@ -18,8 +18,7 @@ class UdemyCertificate extends StatelessWidget {
             height: 190,
             width: 255,
             child: PhotoView(
-              // backgroundDecoration: BoxDecoration(color: Colors.white),
-              backgroundDecoration: BoxDecoration(color: Colors.blue),
+              backgroundDecoration: BoxDecoration(color: Colors.white),
               imageProvider: AssetImage('assets/certificate.jpg'),
               // imageProvider: NetworkImage(data['receiptImage']),
             ),
