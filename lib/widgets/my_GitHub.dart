@@ -17,10 +17,15 @@ class MyGitHub extends StatelessWidget {
           ),
         ),
         SizedBox(width: 5),
-        SelectableText(
-          url,
-          style: TextStyle(color: Colors.blue),
+        GestureDetector(
           onTap: () => MyAPIs.launchInBrowser(url),
+          child: MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: Text(
+              url,
+              style: TextStyle(color: Colors.blue),
+            ),
+          ),
         ),
       ],
     );
