@@ -2,6 +2,8 @@ import 'package:aloysiuskimbowa/pages/desktop_page.dart';
 import 'package:aloysiuskimbowa/pages/mobile_page.dart';
 import 'package:aloysiuskimbowa/widgets/responsive.dart';
 import 'package:flutter/material.dart';
+import 'package:url_strategy/url_strategy.dart';
+
 
 //
 // void main() async {
@@ -11,6 +13,7 @@ import 'package:flutter/material.dart';
 // }
 
 void main() {
+  setPathUrlStrategy();
   runApp(MyApp());
 }
 
