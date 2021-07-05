@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class DoneFeature extends StatelessWidget {
@@ -11,7 +13,10 @@ class DoneFeature extends StatelessWidget {
       children: [
         Icon(Icons.done),
         Expanded(
-          child: Text(' ' + text),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 4),
+            child: Text(' ' + text),
+          ),
         ),
       ],
     );

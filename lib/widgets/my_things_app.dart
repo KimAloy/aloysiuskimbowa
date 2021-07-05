@@ -37,46 +37,41 @@ class MyThingsApp extends StatelessWidget {
           ],
         ),
         SizedBox(height: 8),
-        DoneFeature(
-          text: 'Triple click to zoom-in and zoom out receipt',
+        ListView.separated(
+          separatorBuilder: (context, index) => SizedBox(height: 6),
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          itemCount: featuresList.length,
+          itemBuilder: (BuildContext context, int index) {
+            Feature feature = featuresList[index];
+            return DoneFeature(text: feature.text);
+          },
         ),
-        SizedBox(height: 4),
-        DoneFeature(
-            text:
-                'All Firebase Firestore CRUD (Create, Read, Update, Delete) operations'),
-        SizedBox(height: 4),
-        DoneFeature(
-          text: 'Firebase Authentication',
-        ),
-        SizedBox(height: 4),
-        DoneFeature(
-          text: 'Firebase Storage',
-        ),
-        SizedBox(height: 4),
-        DoneFeature(
-          text: 'Provider state management',
-        ),
-        SizedBox(height: 4),
-        SizedBox(height: 4),
-        DoneFeature(
-          text: 'Automatically updates web app when code is pushed to GitHub',
-        ),
-        DoneFeature(
-          text: 'Reset password',
-        ),
-        SizedBox(height: 4),
-        DoneFeature(
-          text: 'Pull to refresh',
-        ),
-        SizedBox(height: 4),
-        DoneFeature(
-          text: 'Download receipt',
-        ),
-        SizedBox(height: 12),
+        SizedBox(height: 8),
         _MyButton(url: url),
       ],
     );
   }
+}
+
+List<Feature> featuresList = [
+  Feature(
+      text:
+          'All Firebase Firestore CRUD operations (Create, Read, Update, Delete)'),
+  Feature(text: 'Firebase Authentication'),
+  Feature(text: 'Firebase Storage'),
+  Feature(text: 'Riverpod state management'),
+  Feature(text: 'Automatically updates web app when code is pushed to GitHub'),
+  Feature(text: 'Reset password'),
+  Feature(text: 'Pull to refresh'),
+  Feature(text: 'Triple click to zoom-in and zoom out receipt'),
+  // Feature(feature: 'Download receipt'),
+];
+
+class Feature {
+  final String text;
+
+  Feature({required this.text});
 }
 
 class _MyButton extends StatelessWidget {

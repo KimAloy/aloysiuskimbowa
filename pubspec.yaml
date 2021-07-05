@@ -15,8 +15,6 @@ dependencies:
 
 
   cupertino_icons: ^1.0.2
-#  try hovering
-  hovering: ^1.0.4
 #  remove # from URL
   url_strategy: ^0.2.0
   #  zoom receipt image
